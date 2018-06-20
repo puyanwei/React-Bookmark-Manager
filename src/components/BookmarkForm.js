@@ -14,11 +14,11 @@ class BookmarkForm extends React.Component {
 		);
 	}
     handleSubmit = (event) => {
-        event.preventDefault();
-        console.log(this.refs.webAddress.value);
-        this.refs.webAddress.value = ``;
+    	event.preventDefault();
+    	this.props.onAdd(this.refs.webAddress.value);
+    	this.refs.webAddress.value = '';
     }
-};
+}
 
 
 export default BookmarkForm;
