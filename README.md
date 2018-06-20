@@ -8,7 +8,7 @@ This web app imitates a bookmark manager.
 
 ![screen shot 2018-06-20 at 13 28 12](https://user-images.githubusercontent.com/14803518/41659154-666a7c50-7490-11e8-928c-50173af2a14d.png)
 
-Excluding setup, this is 5 hours worth of coding on this project. I will continue this project on another repo.
+Excluding setup, this 5 hours worth of coding on this project. I will continue this project on another repo. I challenged myself to create this using React.js rather then my more familiar tech Vue.js.
 
 ### Installation
 
@@ -21,7 +21,7 @@ npm start
 
 ### Tech Stack
 
--   React.js using its create-react-app starter kit
+-   React.js using its [create-react-app starter kit](https://github.com/facebook/create-react-app)
 -   Javascript, HTML, JSX
 -   SASS styling
 -   ESlint

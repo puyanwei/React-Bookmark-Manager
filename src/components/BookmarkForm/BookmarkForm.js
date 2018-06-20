@@ -23,19 +23,17 @@ class BookmarkForm extends React.Component {
 		);
 	}
 	handleSubmit = (event) => {
-		let input = this.input.current.value;
-
 		event.preventDefault();
-		if (this.emailValidation(input)) {
-			this.props.onAdd(input);
-			input = '';
+		if (this.urlValidation(this.input.current.value)) {
+			this.props.onAdd(this.input.current.value);
+			this.input.current.value = '';
 			document.getElementById('error-message').innerText = '';
 		} else {
 			document.getElementById('error-message').innerText =
 				'Not a valid website url';
 		}
 	};
-	emailValidation = (input) => {
+	urlValidation = (input) => {
 		let websiteRegex = /^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$/;
 		return websiteRegex.test(input);
 	};
