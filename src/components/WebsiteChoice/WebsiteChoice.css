@@ -4,3 +4,7 @@
   grid-template-columns: 6fr 1fr 1fr;
   border-bottom: 1px dashed #bbb;
   text-align: left; }
+  .website-choice-container .delete-btn {
+    cursor: pointer; }
+  .website-choice-container .edit-btn {
+    cursor: pointer; }
