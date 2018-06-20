@@ -12,10 +12,10 @@ class App extends Component {
 	}
 	render() {
 		let websites = this.state.websites;
-		websites = websites.map((website) => {
+		websites = websites.map((website, i) => {
 			// prettier-ignore
 			return (
-				<WebsiteChoice website={website} key={website.id} onDelete={this.onDelete} />
+				<WebsiteChoice website={website} key={i} onDelete={this.onDelete} />
 			);
 		});
 
