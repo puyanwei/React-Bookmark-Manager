@@ -5,7 +5,9 @@ class BookmarkForm extends React.Component {
 		return (
 			<div className="bookmark-form-container">
 				<form className="bookmark-form" onSubmit={this.handleSubmit}>
-					<input placeholder="Add website address" ref="webAddress"
+					<input
+						placeholder="Add website address"
+						ref="webAddress"
 						required
 					/>
 					<input type="submit" value="submit" />
@@ -13,12 +15,11 @@ class BookmarkForm extends React.Component {
 			</div>
 		);
 	}
-    handleSubmit = (event) => {
-    	event.preventDefault();
-    	this.props.onAdd(this.refs.webAddress.value);
-    	this.refs.webAddress.value = '';
-    }
+	handleSubmit = (event) => {
+		event.preventDefault();
+		this.props.onAdd(this.refs.webAddress.value);
+		this.refs.webAddress.value = '';
+	};
 }
-
 
 export default BookmarkForm;
