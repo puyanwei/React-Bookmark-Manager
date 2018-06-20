@@ -1,5 +1,6 @@
 import React from 'react';
-import style from './WebsiteChoice.css';
+import PropTypes from 'prop-types';
+import './WebsiteChoice.css';
 
 class WebsiteChoice extends React.Component {
 	render() {
@@ -19,5 +20,10 @@ class WebsiteChoice extends React.Component {
 		this.props.onDelete(this.props.website);
 	};
 }
+
+WebsiteChoice.propTypes = {
+	website: PropTypes.string,
+	onDelete: PropTypes.func
+};
 
 export default WebsiteChoice;

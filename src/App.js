@@ -12,10 +12,10 @@ class App extends Component {
 	}
 	render() {
 		let websites = this.state.websites;
-		websites = websites.map((website, index) => {
+		websites = websites.map((website) => {
 			// prettier-ignore
 			return (
-				<WebsiteChoice website={website} key={index} onDelete={this.onDelete} />
+				<WebsiteChoice website={website} key={website.id} onDelete={this.onDelete} />
 			);
 		});
 
@@ -33,14 +33,11 @@ class App extends Component {
 		this.setState({
 			characters: updatedWebsiteList
 		});
-		console.log(updatedWebsiteList);
 	};
 	onDelete = (currentWebsite) => {
-		let updatedWebsiteList = this.state.websites.filter(
-			(website, index) => {
-				return currentWebsite !== website;
-			}
-		);
+		let updatedWebsiteList = this.state.websites.filter((website) => {
+			return currentWebsite !== website;
+		});
 		this.setState({
 			websites: updatedWebsiteList
 		});
