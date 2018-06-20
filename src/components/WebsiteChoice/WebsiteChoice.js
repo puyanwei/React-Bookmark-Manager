@@ -11,13 +11,20 @@ class WebsiteChoice extends React.Component {
 					<span className="delete-btn" onClick={this.handleDelete}>
 						x
 					</span>
-					<span className="edit-btn">Edit</span>
+					<span className="edit-btn" onClick={this.editWebsite}>
+						Edit
+					</span>
 				</div>
 			</li>
 		);
 	}
 	handleDelete = () => {
 		this.props.onDelete(this.props.website);
+	};
+	editWebsite = () => {
+		document.querySelector('.website-choice').contentEditable = true;
+		document.querySelector('.website-choice').focus();
+		document.getElementsByClassName('edit-btn')[0].innerText = 'Save';
 	};
 }
 
