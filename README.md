@@ -62,4 +62,4 @@ Most of the blockers I had encountered were to do with deprecated code. It can b
 
 This also makes it difficult to know what is good practice and syntactically correct, as some of the resources online are outdated.
 
-I plan to complete this tech test as it is great practice for learning React, and I will do so on another repo. Feel free to check on it if you want. Thanks!
+I plan to complete this tech test as it is great practice for learning React, and I will do so on [another repo](https://github.com/puyanwei/react-bookmark-manager). Feel free to check on it if you want. Thanks!
