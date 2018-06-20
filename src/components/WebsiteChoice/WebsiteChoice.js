@@ -7,12 +7,17 @@ class WebsiteChoice extends React.Component {
 			<li>
 				<div className="website-choice-container">
 					<span className="website-choice">{this.props.website}</span>
-					<span className="delete-btn">x</span>
+					<span className="delete-btn" onClick={this.handleDelete}>
+						x
+					</span>
 					<span className="edit-btn">Edit</span>
 				</div>
 			</li>
 		);
 	}
+	handleDelete = () => {
+		this.props.onDelete(this.props.website);
+	};
 }
 
 export default WebsiteChoice;
