@@ -21,10 +21,15 @@ class WebsiteChoice extends React.Component {
 	handleDelete = () => {
 		this.props.onDelete(this.props.website);
 	};
-	editWebsite = () => {
+	editWebsite = (event) => {
 		document.querySelector('.website-choice').contentEditable = true;
 		document.querySelector('.website-choice').focus();
 		document.getElementsByClassName('edit-btn')[0].innerText = 'Save';
+		console.log(event.currentTarget);
+	};
+	// DOM version of Jquery's index()
+	index = (element) => {
+		return document.querySelectorAll(element).length;
 	};
 }
 

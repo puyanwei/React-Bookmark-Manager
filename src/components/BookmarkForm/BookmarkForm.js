@@ -14,6 +14,7 @@ class BookmarkForm extends React.Component {
 					<input
 						placeholder="Add website address"
 						ref={this.input}
+						autoFocus
 						required
 					/>
 					<input type="submit" value="submit" />
