@@ -1,0 +1,4 @@
+.website-choice-container {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 6fr 1fr 1fr; }
