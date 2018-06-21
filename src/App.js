@@ -42,10 +42,11 @@ class App extends Component {
 			websites: updatedWebsiteList
 		});
 	};
-	onEdit = (currentWebsite) => {
+	onEdit = (currentWebsite, editedWebsite) => {
+		console.log(234234);
 		let updatedWebsiteList = this.state.websites.map((website) => {
 			if (currentWebsite === website) {
-				return 'WAFFLES';
+				return editedWebsite;
 			} else {
 				return website;
 			}

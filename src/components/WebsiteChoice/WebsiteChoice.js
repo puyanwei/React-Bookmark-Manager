@@ -36,10 +36,10 @@ class WebsiteChoice extends React.Component {
 	};
 	handleEditSubmit = (event) => {
 		event.preventDefault()
-		console.log(this.editedInput.current.value);
+		this.props.onEdit(this.props.website, this.editedInput.current.value);
 	}
 	handleEdit = () => {
-		this.props.onEdit(this.props.website);
+		// hiding and unhiding the form panel
 	};
 }
 
