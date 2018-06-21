@@ -36,10 +36,20 @@ class WebsiteChoice extends React.Component {
 	};
 	handleEditSubmit = (event) => {
 		event.preventDefault()
-		this.props.onEdit(this.props.website, this.editedInput.current.value);
+		if (this.urlValidation(this.editedInput.current.value)) {
+			this.props.onEdit(this.props.website, this.editedInput.current.value);
+			document.getElementById('error-message').innerText = '';
+		} else {
+			document.getElementById('error-message').innerText =
+			'Not a valid website url';
+		}
 	}
 	handleEdit = () => {
 		// hiding and unhiding the form panel
+	};
+	urlValidation = (input) => {
+		let websiteRegex = /^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$/;
+		return websiteRegex.test(input);
 	};
 }
 

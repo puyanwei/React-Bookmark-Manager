@@ -43,7 +43,6 @@ class App extends Component {
 		});
 	};
 	onEdit = (currentWebsite, editedWebsite) => {
-		console.log(234234);
 		let updatedWebsiteList = this.state.websites.map((website) => {
 			if (currentWebsite === website) {
 				return editedWebsite;
