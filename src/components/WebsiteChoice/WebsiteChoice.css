@@ -2,9 +2,16 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: 6fr 1fr 1fr;
-  border-bottom: 1px dashed #bbb;
   text-align: left; }
+  .website-choice-container .website-choice {
+    border-bottom: 1px dashed #bbb; }
   .website-choice-container .delete-btn {
-    cursor: pointer; }
+    cursor: pointer;
+    text-align: center;
+    border-bottom: 1px dashed #bbb; }
   .website-choice-container .edit-btn {
-    cursor: pointer; }
+    cursor: pointer;
+    border-bottom: 1px dashed #bbb;
+    margin-right: 15px; }
+  .website-choice-container .editing-form {
+    padding-top: 10px; }

@@ -6,6 +6,9 @@ class WebsiteChoice extends React.Component {
 	constructor() {
 		super();
 		this.editedInput = React.createRef();
+		this.state = {
+			show: 'none'
+		};
 	}
 	render() {
 		return (
@@ -15,10 +18,10 @@ class WebsiteChoice extends React.Component {
 					<span className="delete-btn" onClick={this.handleDelete}>
 						x
 					</span>
-					<span className="edit-btn" onClick={this.handleEdit}>
+					<span className="edit-btn" onClick={this.toggleEditForm}>
 						Edit
 					</span>
-					<form className="editing-form" onSubmit={this.handleEditSubmit}>
+					<form className="editing-form" style={{display: this.state.show }} onSubmit={this.handleEditSubmit}>
 						<input
 							placeholder="Edit Website Address"
 							ref={this.editedInput}
@@ -39,13 +42,18 @@ class WebsiteChoice extends React.Component {
 		if (this.urlValidation(this.editedInput.current.value)) {
 			this.props.onEdit(this.props.website, this.editedInput.current.value);
 			document.getElementById('error-message').innerText = '';
+			this.toggleEditForm()
 		} else {
 			document.getElementById('error-message').innerText =
 			'Not a valid website url';
 		}
 	}
-	handleEdit = () => {
-		// hiding and unhiding the form panel
+	toggleEditForm = () => {
+		if (this.state.show === 'none') {
+			this.setState({show : null })
+		} else {
+			this.setState({show : 'none' })
+		}
 	};
 	urlValidation = (input) => {
 		let websiteRegex = /^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$/;
