@@ -15,7 +15,7 @@ class App extends Component {
 		websites = websites.map((website, index) => {
 			// prettier-ignore
 			return (
-				<WebsiteChoice website={website} key={index} onDelete={this.onDelete} />
+				<WebsiteChoice website={website} key={index} onDelete={this.onDelete} onEdit={this.onEdit} />
 			);
 		});
 
@@ -37,6 +37,18 @@ class App extends Component {
 	onDelete = (currentWebsite) => {
 		let updatedWebsiteList = this.state.websites.filter((website) => {
 			return currentWebsite !== website;
+		});
+		this.setState({
+			websites: updatedWebsiteList
+		});
+	};
+	onEdit = (currentWebsite) => {
+		let updatedWebsiteList = this.state.websites.map((website) => {
+			if (currentWebsite === website) {
+				return 'WAFFLES';
+			} else {
+				return website;
+			}
 		});
 		this.setState({
 			websites: updatedWebsiteList
