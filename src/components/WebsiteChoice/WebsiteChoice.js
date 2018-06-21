@@ -14,7 +14,11 @@ class WebsiteChoice extends React.Component {
 		return (
 			<li>
 				<div className="website-choice-container">
-					<span className="website-choice">{this.props.website}</span>
+					<span className="website-choice">
+						<a href={`http://${this.props.website}`}>
+							{this.props.website}
+						</a>
+					</span>
 					<span className="delete-btn" onClick={this.handleDelete}>
 						x
 					</span>

@@ -15,10 +15,9 @@ class App extends Component {
 		websites = websites.map((website, index) => {
 			// prettier-ignore
 			return (
-				<WebsiteChoice website={website} key={index} onDelete={this.onDelete} onEdit={this.onEdit} />
+				<WebsiteChoice website={website} key={index} onDelete={this.onDelete} onEdit={this.onEdit}>{website}</WebsiteChoice>
 			);
 		});
-
 		return (
 			<div className="App">
 				<h1>Bookmarks</h1>
