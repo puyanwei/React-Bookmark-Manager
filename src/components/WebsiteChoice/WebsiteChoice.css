@@ -2,7 +2,8 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: 6fr 1fr 1fr;
-  text-align: left; }
+  text-align: left;
+  margin-bottom: 10px; }
   .website-choice-container .website-choice {
     border-bottom: 1px dashed #bbb; }
   .website-choice-container .delete-btn {

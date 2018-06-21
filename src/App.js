@@ -44,11 +44,8 @@ class App extends Component {
 	};
 	onEdit = (currentWebsite, editedWebsite) => {
 		let updatedWebsiteList = this.state.websites.map((website) => {
-			if (currentWebsite === website) {
-				return editedWebsite;
-			} else {
-				return website;
-			}
+			let choice = currentWebsite === website ? editedWebsite : website;
+			return choice;
 		});
 		this.setState({
 			websites: updatedWebsiteList
