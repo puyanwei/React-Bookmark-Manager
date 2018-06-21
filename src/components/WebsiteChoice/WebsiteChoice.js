@@ -3,6 +3,10 @@ import PropTypes from 'prop-types';
 import './WebsiteChoice.css';
 
 class WebsiteChoice extends React.Component {
+	constructor() {
+		super();
+		this.editedInput = React.createRef();
+	}
 	render() {
 		return (
 			<li>
@@ -14,6 +18,15 @@ class WebsiteChoice extends React.Component {
 					<span className="edit-btn" onClick={this.handleEdit}>
 						Edit
 					</span>
+					<form className="editing-form" onSubmit={this.handleEditSubmit}>
+						<input
+							placeholder="Edit Website Address"
+							ref={this.editedInput}
+							autoFocus
+							required
+						/>
+						<input type="submit" value="submit" />
+					</form>
 				</div>
 			</li>
 		);
@@ -21,6 +34,10 @@ class WebsiteChoice extends React.Component {
 	handleDelete = () => {
 		this.props.onDelete(this.props.website);
 	};
+	handleEditSubmit = (event) => {
+		event.preventDefault()
+		console.log(this.editedInput.current.value);
+	}
 	handleEdit = () => {
 		this.props.onEdit(this.props.website);
 	};
