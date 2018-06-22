@@ -18,8 +18,8 @@ This web app imitates a bookmark manager.
 _Update!_ - App is deployed at https://react-bookmark-manager.herokuapp.com/
 
 ```
-git clone git@github.com:puyanwei/bookmark-manager-react.git
-cd bookmark-manager-react
+git clone git@github.com:puyanwei/react-bookmark-manager.git
+cd react-bookmark-manager
 npm install
 npm start
 ```
