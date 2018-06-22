@@ -76,3 +76,12 @@ I found the setup with ESlint rather tough, it seemed that after some research I
 Most of the blockers I had encountered were to do with deprecated code. It can be frustrating to google answers, find a solution, apply it and have it working, only to find out later that it is deprecated and not good practice to use that method anymore.
 
 This also makes it difficult to know what is good practice and syntactically correct, as some of the resources online are outdated.
+
+### Feedback!
+
+Thanks so much for the code review interview! Here are some bugs and improvements highlighted;
+
+-   Outputting the error message using getElementById, remember we're using React we can dynamically create messages!
+-   Regex rejects dashes! Also comment in where you got this from...
+-   Could have imported regex checking and error message output functions as a helper folder so that it would be more scaleable
+-   Better to use id numbers for each bookmark as comparing the text will delete multiple bookmarks if they have the same name
