@@ -53,6 +53,18 @@ After some diagramming I outlined my plan;
 
 7.  Upload to Heroku.
 
+### Quality Control
+
+I tried to adhere to good coding practices in this project.
+
+-   Descriptive Naming for functions and variables.
+-   Separated concerns by structuring code into components.
+-   Adhering to industry standard file and folder structuring.
+-   Balancing out refactoring to minimise repetative code, but at no cost to its readability.
+-   Using ES6 Javascript syntax throughout.
+-   Following ESlint suggestions and making them pass.
+-   Small Git commits and good commit descriptions.
+
 ### Challenges
 
 As I am more used to using Vue.js, I found some aspects of creating this app in React.js challenging.
