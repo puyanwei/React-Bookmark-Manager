@@ -44,6 +44,7 @@ class WebsiteChoice extends React.Component {
 	}
 	handleDelete = () => {
 		this.props.onDelete(this.props.website);
+		this.toggleEditForm();
 	};
 	handleEditSubmit = (event) => {
 		event.preventDefault();
