@@ -44,7 +44,6 @@ class WebsiteChoice extends React.Component {
 	}
 	handleDelete = () => {
 		this.props.onDelete(this.props.website);
-		this.toggleEditForm();
 	};
 	handleEditSubmit = (event) => {
 		event.preventDefault();
@@ -66,7 +65,7 @@ class WebsiteChoice extends React.Component {
 			: this.setState({ show: 'none' });
 	};
 	urlValidation = (input) => {
-		let websiteRegex = /^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$/;
+		const websiteRegex = /^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$/;
 		return websiteRegex.test(input);
 	};
 }

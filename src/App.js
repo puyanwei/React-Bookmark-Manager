@@ -39,7 +39,7 @@ class App extends Component {
 	loadSessions = () => {
 		const cachedWebsites = localStorage.getItem('websites');
 		if (cachedWebsites !== null) {
-			let array = cachedWebsites.split(',');
+			const array = cachedWebsites.split(',');
 			this.setState({
 				websites: array
 			});
@@ -47,40 +47,34 @@ class App extends Component {
 	};
 
 	sendSessions = (value) => {
-		console.log(value.length);
-		if (value.length === 0) {
-			localStorage.clear();
-		} else {
-			localStorage.setItem('websites', value);
-		}
+		value.length === 0
+			? localStorage.clear()
+			: localStorage.setItem('websites', value);
 	};
 
 	onAdd = (newWebsite) => {
-		let updatedWebsiteList = this.state.websites;
-		updatedWebsiteList.push(newWebsite);
-		this.setState({
-			websites: updatedWebsiteList
-		});
-		this.sendSessions(updatedWebsiteList);
+		let newWebsiteList = this.state.websites;
+		newWebsiteList.push(newWebsite);
+		this.updateWebsiteList(newWebsiteList);
 	};
 	onDelete = (currentWebsite) => {
-		let updatedWebsiteList = this.state.websites.filter((website) => {
+		let newWebsiteList = this.state.websites.filter((website) => {
 			return currentWebsite !== website;
 		});
-		this.setState({
-			websites: updatedWebsiteList
-		});
-		this.sendSessions(updatedWebsiteList);
+		this.updateWebsiteList(newWebsiteList);
 	};
 	onEdit = (currentWebsite, editedWebsite) => {
-		let updatedWebsiteList = this.state.websites.map((website) => {
+		let newWebsiteList = this.state.websites.map((website) => {
 			let choice = currentWebsite === website ? editedWebsite : website;
 			return choice;
 		});
+		this.updateWebsiteList(newWebsiteList);
+	};
+	updateWebsiteList = (value) => {
 		this.setState({
-			websites: updatedWebsiteList
+			websites: value
 		});
-		this.sendSessions(updatedWebsiteList);
+		this.sendSessions(value);
 	};
 }
 
