@@ -10,8 +10,7 @@ This web app imitates a bookmark manager.
 -   Users list will be stored in localStorage so data is immutable
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/14803518/41782600-9bde1132-7632-11e8-9212-91e0065bfb57.png
-">
+  <img src="https://user-images.githubusercontent.com/14803518/41782600-9bde1132-7632-11e8-9212-91e0065bfb57.png">
 </p>
 
 ### Installation
