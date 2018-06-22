@@ -36,9 +36,6 @@ class App extends Component {
 	componentWillMount = () => {
 		this.loadSessions();
 	};
-	componentWillUnmount = () => {
-		this.sendSessions();
-	};
 	loadSessions = () => {
 		const cachedWebsites = localStorage.getItem('websites');
 		if (cachedWebsites !== null) {
@@ -50,7 +47,12 @@ class App extends Component {
 	};
 
 	sendSessions = (value) => {
-		localStorage.setItem('websites', value);
+		console.log(value.length);
+		if (value.length === 0) {
+			localStorage.clear();
+		} else {
+			localStorage.setItem('websites', value);
+		}
 	};
 
 	onAdd = (newWebsite) => {
