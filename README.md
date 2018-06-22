@@ -3,16 +3,19 @@
 This web app imitates a bookmark manager.
 
 -   Users can add a bookmark to the list.
+-   Bookmarks output as clickable hyperlinks.
 -   Users can delete an existing bookmark to the list.
 -   There is validation in the form to only allow website urls as valid entries, or an error will be thrown.
+-   Users can edit their existing bookmarks.
+-   Users list will be stored in localStorage so data is immutable
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/14803518/41667475-feb1afd8-74a4-11e8-9953-071c73c35fbd.png">
 </p>
 
-Excluding setup, this 5 hours worth of coding on this project. I will continue this project on another repo. I challenged myself to create this using React.js rather then my more familiar tech Vue.js.
-
 ### Installation
+
+_Update!_ - App is deployed at https://react-bookmark-manager.herokuapp.com/
 
 ```
 git clone git@github.com:puyanwei/bookmark-manager-react.git
@@ -61,5 +64,3 @@ I found the setup with ESlint rather tough, it seemed that after some research I
 Most of the blockers I had encountered were to do with deprecated code. It can be frustrating to google answers, find a solution, apply it and have it working, only to find out later that it is deprecated and not good practice to use that method anymore.
 
 This also makes it difficult to know what is good practice and syntactically correct, as some of the resources online are outdated.
-
-I plan to complete this tech test as it is great practice for learning React, and I will do so on [another repo](https://github.com/puyanwei/react-bookmark-manager). Feel free to check on it if you want. Thanks!
