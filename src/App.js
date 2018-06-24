@@ -33,10 +33,10 @@ class App extends Component {
 			</div>
 		);
 	}
-	componentWillMount = () => {
+	componentDidMount = () => {
 		this.loadSessions();
 	};
-	loadSessions = () => {
+	loadLocalStorage = () => {
 		const cachedWebsites = localStorage.getItem('websites');
 		if (cachedWebsites !== null) {
 			const array = cachedWebsites.split(',');
@@ -46,7 +46,7 @@ class App extends Component {
 		}
 	};
 
-	sendSessions = (value) => {
+	sendLocalStorage = (value) => {
 		value.length === 0
 			? localStorage.clear()
 			: localStorage.setItem('websites', value);
