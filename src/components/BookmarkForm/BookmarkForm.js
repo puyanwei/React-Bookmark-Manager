@@ -6,6 +6,9 @@ class BookmarkForm extends React.Component {
 	constructor() {
 		super();
 		this.input = React.createRef();
+		this.state = {
+			errorMessage: false
+		};
 	}
 	render() {
 		return (
@@ -19,7 +22,9 @@ class BookmarkForm extends React.Component {
 					/>
 					<input type="submit" value="submit" />
 				</form>
-				<div id="error-message" />
+				<div id="error-message">
+					{this.state.errorMessage ? 'Not a valid website url' : ''}
+				</div>
 			</div>
 		);
 	}
@@ -28,12 +33,12 @@ class BookmarkForm extends React.Component {
 		if (this.urlValidation(this.input.current.value)) {
 			this.props.onAdd(this.input.current.value);
 			this.input.current.value = '';
-			document.getElementById('error-message').innerText = '';
+			this.setState({ errorMessage: false });
 		} else {
-			document.getElementById('error-message').innerText =
-				'Not a valid website url';
+			this.setState({ errorMessage: true });
 		}
 	};
+
 	urlValidation = (input) => {
 		const websiteRegex = /^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$/;
 		return websiteRegex.test(input);

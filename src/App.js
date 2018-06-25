@@ -34,7 +34,7 @@ class App extends Component {
 		);
 	}
 	componentDidMount = () => {
-		this.loadSessions();
+		this.loadLocalStorage();
 	};
 	loadLocalStorage = () => {
 		const cachedWebsites = localStorage.getItem('websites');
@@ -74,7 +74,7 @@ class App extends Component {
 		this.setState({
 			websites: value
 		});
-		this.sendSessions(value);
+		this.sendLocalStorage(value);
 	};
 }
 
