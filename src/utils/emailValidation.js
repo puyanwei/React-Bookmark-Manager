@@ -1,5 +1,6 @@
 let urlValidation = (input) => {
-	const websiteRegex = /^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$/;
+	// Regex taken from https://code.tutsplus.com/tutorials/8-regular-expressions-you-should-know--net-6149
+	const websiteRegex = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
 	return websiteRegex.test(input);
 };
 
