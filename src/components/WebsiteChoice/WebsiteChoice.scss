@@ -20,4 +20,9 @@
     .editing-form {
         padding-top: 10px;
     }
+    .editing-error-message {
+        color: red;
+        grid-row: 3;
+        margin-top: 5px;
+    }
 }

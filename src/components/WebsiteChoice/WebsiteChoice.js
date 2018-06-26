@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './WebsiteChoice.css';
+import { urlValidation } from '../../utils/emailValidation';
 
 class WebsiteChoice extends React.Component {
 	constructor() {
 		super();
 		this.editedInput = React.createRef();
 		this.state = {
-			show: 'none'
+			show: 'none',
+			errorMessage: false
 		};
 	}
 	render() {
@@ -38,6 +40,11 @@ class WebsiteChoice extends React.Component {
 						/>
 						<input type="submit" value="submit" />
 					</form>
+					<div className="editing-error-message">
+						{this.state.errorMessage
+							? 'Not a valid website url'
+							: ''}
+					</div>
 				</div>
 			</li>
 		);
@@ -47,26 +54,22 @@ class WebsiteChoice extends React.Component {
 	};
 	handleEditSubmit = (event) => {
 		event.preventDefault();
-		if (this.urlValidation(this.editedInput.current.value)) {
+		if (urlValidation(this.editedInput.current.value)) {
 			this.props.onEdit(
 				this.props.website,
 				this.editedInput.current.value
 			);
-			document.getElementById('error-message').innerText = '';
+			this.editedInput.current.value = '';
+			this.setState({ errorMessage: false });
 			this.toggleEditForm();
 		} else {
-			document.getElementById('error-message').innerText =
-				'Not a valid website url';
+			this.setState({ errorMessage: true });
 		}
 	};
 	toggleEditForm = () => {
 		this.state.show === 'none'
 			? this.setState({ show: null })
 			: this.setState({ show: 'none' });
-	};
-	urlValidation = (input) => {
-		const websiteRegex = /^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$/;
-		return websiteRegex.test(input);
 	};
 }
 

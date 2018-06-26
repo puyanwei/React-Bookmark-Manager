@@ -16,3 +16,7 @@
     margin-right: 15px; }
   .website-choice-container .editing-form {
     padding-top: 10px; }
+  .website-choice-container .editing-error-message {
+    color: red;
+    grid-row: 3;
+    margin-top: 5px; }
