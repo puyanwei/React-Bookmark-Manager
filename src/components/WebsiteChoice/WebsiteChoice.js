@@ -76,7 +76,8 @@ class WebsiteChoice extends React.Component {
 WebsiteChoice.propTypes = {
 	website: PropTypes.string,
 	onDelete: PropTypes.func,
-	onEdit: PropTypes.func
+	onEdit: PropTypes.func,
+	id: PropTypes.number
 };
 
 export default WebsiteChoice;
