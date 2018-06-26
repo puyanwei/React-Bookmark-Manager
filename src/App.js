@@ -18,6 +18,7 @@ class App extends Component {
 				<WebsiteChoice
 					website={website}
 					key={index}
+					id={index}
 					onDelete={this.onDelete}
 					onEdit={this.onEdit}
 				>
@@ -57,9 +58,9 @@ class App extends Component {
 		newWebsiteList.push(newWebsite);
 		this.updateWebsiteList(newWebsiteList);
 	};
-	onDelete = (currentWebsite) => {
-		let newWebsiteList = this.state.websites.filter((website) => {
-			return currentWebsite !== website;
+	onDelete = (id) => {
+		let newWebsiteList = this.state.websites.filter((website, index) => {
+			return index !== id;
 		});
 		this.updateWebsiteList(newWebsiteList);
 	};

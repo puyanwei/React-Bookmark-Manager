@@ -50,7 +50,7 @@ class WebsiteChoice extends React.Component {
 		);
 	}
 	handleDelete = () => {
-		this.props.onDelete(this.props.website);
+		this.props.onDelete(this.props.id);
 	};
 	handleEditSubmit = (event) => {
 		event.preventDefault();

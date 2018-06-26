@@ -84,4 +84,4 @@ Thanks so much for the code review interview! Here are some bugs and improvement
 -   Outputting the error message using getElementById, remember we're using React we can dynamically create messages!
 -   Regex rejects dashes! Also comment in where you got this from...
 -   Could have imported regex checking and error message output functions as a helper folder so that it would be more scaleable
--   Better to use id numbers for each bookmark as comparing the text will delete multiple bookmarks if they have the same name
+-   Better to use id numbers for each bookmark as comparing the text using the current filter method will delete multiple bookmarks if they have the same name
