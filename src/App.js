@@ -10,6 +10,7 @@ class App extends Component {
 			websites: []
 		};
 	}
+
 	render() {
 		let websites = this.state.websites;
 		websites = websites.map((website, index) => {
@@ -34,6 +35,7 @@ class App extends Component {
 			</div>
 		);
 	}
+  
 	componentDidMount = () => {
 		this.loadLocalStorage();
 	};
