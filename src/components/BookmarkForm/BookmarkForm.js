@@ -11,6 +11,7 @@ class BookmarkForm extends React.Component {
 			errorMessage: false
 		};
 	}
+
 	render() {
 		return (
 			<div className="bookmark-form-container">
@@ -29,6 +30,7 @@ class BookmarkForm extends React.Component {
 			</div>
 		);
 	}
+  
 	handleSubmit = (event) => {
 		event.preventDefault();
 		if (urlValidation(this.input.current.value)) {

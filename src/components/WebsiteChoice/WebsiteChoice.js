@@ -12,6 +12,7 @@ class WebsiteChoice extends React.Component {
 			errorMessage: false
 		};
 	}
+
 	render() {
 		return (
 			<li>
@@ -49,6 +50,7 @@ class WebsiteChoice extends React.Component {
 			</li>
 		);
 	}
+  
 	handleDelete = () => {
 		this.props.onDelete(this.props.id);
 	};
