@@ -81,9 +81,19 @@ This also makes it difficult to know what is good practice and syntactically cor
 
 Thanks so much for the code review interview! Here are some bugs and improvements highlighted;
 
--   ~~Outputting the error message using getElementById, remember we're using React we can dynamically create messages!~~
--   ~~Regex rejects dashes! Also comment in where you got this from...~~
--   ~~Could have imported regex checking and error message output functions as a helper folder so that it would be more scaleable.~~
--   ~~Better to use id numbers for each bookmark as comparing the text using the current filter method will delete multiple bookmarks if they have the same name.~~
+-   Outputting the error message using getElementById, remember we're using React we can dynamically create messages!
+-   Regex rejects dashes! Also comment in where you got this from...
+-   Could have imported regex checking and error message output functions as a helper folder so that it would be more scaleable.
+-   Better to use id numbers for each bookmark as comparing the text using the current filter method will delete multiple bookmarks if they have the same name.
 
 _Update!_ - All feedback suggestions corrected now.
+
+### More Feedback!
+
+Thanks so much to [@martink-io](https://github.com/martink-io) for the extra feedback!
+
+-   Conditional truthy syntax for error message
+-   Data binding refactored to update state using onChange event instead of React.createRef()
+-   Clearer naming conventions with addWebstie, editWebsite, deleteWebsite and displayError
+-   Object destructuring addition
+-   Render functions moved to bottom
